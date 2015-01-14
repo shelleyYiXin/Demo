@@ -21,7 +21,7 @@ public class login extends HttpServlet {
 		out.println("		<title>达内电子商务门户</title>");
 		out.println("		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
 		out.println("		<meta name=\"description\" content=\"达内电子商务门户\">");
-		out.println("		<link href=\" css/tarena.css\" rel=stylesheet>");
+		out.println("		<linkd href=\" css/tarena.css\" rel=stylesheet>");
 		out.println("              <script language=\"javascript\" src=\"loginvalidate.js\">");
 		out.println("	       </script>");
 		out.println("	</head>");
@@ -41,15 +41,15 @@ public class login extends HttpServlet {
 		out.println("						<tr>");
 		out.println("							<td width=\"5%\"></td>");
 		out.println("							");
-		out.println("          <td width=\"10%\"><a href=\"/Demo/productList\"><img name=\"Image1\" border=\"0\" src=\" images/index.gif\" width=\"90\" height=\"36\"></a></td>");
+		out.println("          <td width=\"10%\"><a href=\"productList\"><img name=\"Image1\" border=\"0\" src=\" images/index.gif\" width=\"90\" height=\"36\"></a></td>");
 		out.println("							");
-		out.println("          <td width=\"10%\"><a href=\"/Demo/userManage\"><img name=\"Image2\" border=\"0\" src=\" images/reg.gif\" width=\"92\" height=\"36\"></a></td>");
+		out.println("          <td width=\"10%\"><a href=\"userManage\"><img name=\"Image2\" border=\"0\" src=\" images/reg.gif\" width=\"92\" height=\"36\"></a></td>");
 		out.println("							");
-		out.println("          <td width=\"10%\"><a href=\"/Demo/shoppingCart\"><img name=\"Image4\" border=\"0\" src=\" images/cart.gif\" width=\"92\" height=\"36\"></a></td>");
+		out.println("          <td width=\"10%\"><a href=\"shoppingCart\"><img name=\"Image4\" border=\"0\" src=\" images/cart.gif\" width=\"92\" height=\"36\"></a></td>");
 		out.println("							");
-		out.println("          <td width=\"10%\"><a href=\"/Demo/orderList\"><img name=\"Image5\" border=\"0\" src=\" images/order.gif\" width=\"92\" height=\"36\"></a></td>");
+		out.println("          <td width=\"10%\"><a href=\"orderList\"><img name=\"Image5\" border=\"0\" src=\" images/order.gif\" width=\"92\" height=\"36\"></a></td>");
 		out.println("							");
-		out.println("          <td width=\"10%\"><a href=\"/Demo/productList\"><img name=\"Image6\" border=\"0\" src=\" images/exit.gif\" width=\"92\" height=\"36\"></a></td>");
+		out.println("          <td width=\"10%\"><a href=\"productList\"><img name=\"Image6\" border=\"0\" src=\" images/exit.gif\" width=\"92\" height=\"36\"></a></td>");
 		out.println("						</tr>");
 		out.println("					</table>");
 		out.println("				</td>");
@@ -75,7 +75,7 @@ public class login extends HttpServlet {
 		out.println("			</tr>");
 		out.println("		</table>");
 		out.println("		<br>");
-     	out.println("		<form method=\"post\"  onsubmit=\"/Demo/return loginvalidate(this)\" action=\"/Demo/productList\">");
+		out.println("      <form action=\"doLogin.action\" method=\"post\">");
 		out.println("		<table cellpadding=\"3\" cellspacing=\"1\" align=\"center\" class=\"tableborder1\">");
 		out.println("			<tr>");
 		out.println("				<td colspan=\"4\" valign=\"middle\" align=\"center\" height=\"25\" background=\" images/bg2.gif\" width=\"50\">");
@@ -86,12 +86,14 @@ public class login extends HttpServlet {
 		out.println("				");
 		out.println("			</tr>");
 		out.println("			<tr>");
-		out.println("				<td class=tablebody1 valign=\"middle\" height=\"20\" width=\"30%\">");
+		out.println("				<td  class=tablebody1 valign=\"middle\" height=\"20\" width=\"30%\">");
 		out.println("     					 请输入您的用户名:");
+		
 		out.println("				 </td>");
+	
 		out.println("				<td class=tablebody1 valign=\"middle\" height=\"20\" width=\"80%\">");
 		out.println("					");
-		out.println("						<input type=\"text\">&nbsp;<a href=\"/Demo/Register\">注册新用户</a>");
+		out.println("						<input name=\"userid\" type=\"text\">&nbsp;<a href=\"/Register\">注册新用户</a>");
 		out.println("				");
 		out.println("				");
 		out.println("				");
@@ -101,10 +103,12 @@ public class login extends HttpServlet {
 		out.println("			<tr>");
 		out.println("				<td class=tablebody1 valign=\"middle\" width=\"30%\" height=\"25\">");
 		out.println("     					 请输入您的密码:");
+	
 		out.println("				 </td>");
+	
 		out.println("				<td class=tablebody1 valign=\"middle\" width=\"80%\">");
 		out.println("		");
-		out.println("						<input type=password>");
+		out.println("						<input name=\"password\" type=\"password\">");
 		out.println("					");
 		out.println("				");
 		out.println("				");
@@ -117,7 +121,7 @@ public class login extends HttpServlet {
 		out.println("				<td colspan=\"4\" class=tablebody2 align=\"center\" valign=\"middle\" width=\"60%\">");
 		out.println("				");
 		out.println("				");
-		out.println("						<input  type=submit value=登陆>");
+		out.println("	              <input type=\"submit\" value=\"login\">");
 		out.println("					");
 		out.println("     					");
 		out.println("				 </td>");

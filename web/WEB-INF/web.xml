@@ -12,7 +12,15 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
+	<servlet>
+		<servlet-name>ControllerServlet</servlet-name>
+		<servlet-class>cn.com.control.ControllerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControllerServlet</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>productDetail</servlet-name>
 		<servlet-class>cn.com.product.productDetail</servlet-class>
@@ -107,7 +115,12 @@
 		<url-pattern>/orderList</url-pattern>
 	</servlet-mapping>
 	
-
-	
-	
+	<servlet>
+		<servlet-name>Error</servlet-name>
+		<servlet-class>cn.com.control.Error</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Error</servlet-name>
+		<url-pattern>/Error</url-pattern>
+	</servlet-mapping>
 </web-app>
