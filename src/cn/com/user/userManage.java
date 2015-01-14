@@ -21,47 +21,11 @@ public class userManage extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		try{
-						
-			UserService auser =  new UserServiceImpl();
-			
-//			StudentService studentService = ServiceFactory.getStudentService();
-			
-			List UserList = auser.getUserList();
-
-			toUserList(resp, UserList);
-			
-		} catch (Exception e){
-			toError(resp,e.getMessage());
-		}
+		List userList = (List)req.getAttribute("userList");
 		
-	}
-		
-	private void toError(HttpServletResponse resp, String message) throws IOException {
-		resp.setContentType("charset=UTF-8");
-		PrintWriter out = resp.getWriter();
-		
-		out.println("<html>");
-		out.println("<head>");
-		out.println("	<title>Error</title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("	<h2 align=\"center\">Error</h2>");
-		out.println("	<hr>");
-		out.println("	System Error," + message + "!");
-		out.println("</body>");
-		out.println("</html>");
-		
-		out.close();
-	}		
-		
-	private void toUserList(HttpServletResponse resp, List UserList)
-			throws IOException {
-		resp.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = resp.getWriter();	
 	
-	
-		out.println(new Date());
+		//out.println(new Date());
 
 		out.println("<html>");
 		out.println("	<head>");
@@ -151,7 +115,7 @@ public class userManage extends HttpServlet {
 		out.println("				</td>");
 		out.println("			</tr>");
 //////////////////////////////////////////////////		
-		for(Iterator<Users> it = UserList.iterator();it.hasNext();){
+		for(Iterator<Users> it = userList.iterator();it.hasNext();){
 			
 			Users au = it.next();
 			
@@ -201,7 +165,7 @@ public class userManage extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-
+		
 	}
 
 }
