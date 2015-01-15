@@ -74,6 +74,7 @@ public class login extends HttpServlet {
 		out.println("				</td>");
 		out.println("			</tr>");
 		out.println("		</table>");
+		
 		out.println("		<br>");
 		out.println("      <form action=\"doLogin.action\" method=\"post\">");
 		out.println("		<table cellpadding=\"3\" cellspacing=\"1\" align=\"center\" class=\"tableborder1\">");
@@ -161,7 +162,7 @@ public class login extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	 
+		doGet(req,resp);
 	}
 
 }
